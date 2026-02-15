@@ -24,5 +24,44 @@
         <li>Border: Is the space between the margin and the padding. Its what creates the border effect around a box. It can be as little as a pixel thick(Very thin)</li>
     </ul>
     <img src="./Snippets/A_Box_Example.png" alt="An image example of a CSS box model showning Padding,Margin and border">
+
+    <hr>
+
+    <h2>Standard/Alternative box Model</h2>
+
+    <p>
+        The box model consists of a standard Variant model and an Alternative variant. These variants use the same Content,Margin,Padding,Border box measurements but style them differently when visible in the browser.<br>
+        Using the below dimesions as an example we can workout the actual sizes of each box which is done in the below sub headings.
+    </p>
+    <img style="margin-left:20px" src="./Snippets/Standard_Box_Dimensions.png" alt="Image of box dimension">
+    <br>
+    <br>
+    <ul>
+        <li>
+            <strong>Standard</strong> - If you set a height and width property of an element in a standard box variant (Which is the browsers default) these values will define the <em>contents</em> box dimensions only, disregarding the padding,border and margin.<br>
+            <img src="./Snippets/Standard_Box.png" alt="Standard box model">
+            <br>
+            The actual space taken up by this standard variant box is <em>410px</em> wide and  <em>210px high</em> this is because the content box width is 350px plus 25px of padding either side of the content, then 5px border either side of the padding<br>
+            (350 + 25 + 25 + 5 + 5= 410). Same thing for the height (150 + 25 + 25 + 5 + 5= 210).
+        </li>
+        <br>
+        <br>
+        <br>
+        <li>
+            <strong>Alternative</strong> - If you set the height and width property in an alternative box variant (Which needs to be defined using <sub><img src="./Snippets/Box_Sizing_BorderBox.png" alt="box-sizing: border-box example"></sub> within CSS styling) Then the total box dimesions will stay as<br>
+            the height and width values that were defined including the padding and border values. This is a benefit as you do not need to calculate the dimesions manually. They are what you set them as.
+            <img src="./Snippets/Alt_Box.png" alt="Image of an alternative box example">
+        </li>        
+    </ul>
+    <br>
+    <h3>*Pro Tip*(Inheriting Box Sizing)</h3>
+    <p>
+        Most developers would set the 'box-sizing: border-box' property to all elements from the start of the project to make things easier. This is done in the HTML element itself like the example below.<br>
+        Just doing this doesn't usually pose an issue but you may come accross problems were you want to reset an element to a 'Content-Box' which is fine. The issue poses when you have a child element inside<br>
+        of this content box which you want to also follow into a 'Content-Box' but it doesnt do what your expecting. This element stays as a 'Border-Box'! To solve this issue you can declare from the begining code<br>
+        with a universal selector ('*') to inherit parents 'box-sizing' option.
+    </p>
+
+    <img src="./Snippets/Inherit_Box_Sizing.png" alt="Inheritting box-sizing options">
 </body>
 </html>
